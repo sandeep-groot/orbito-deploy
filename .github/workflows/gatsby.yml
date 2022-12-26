@@ -9,25 +9,25 @@ on:
   push:
     branches: ["master"]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  
+
   # Allows external webhook trigger
   repository_dispatch:
-    types: 
-          - orbitowebhook
+    types:
+      - orbitowebhook
 
 jobs:
   # Build job
   build:
     runs-on: windows-latest
-    
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3     
-      
+        uses: actions/checkout@v3
+
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v2
@@ -41,16 +41,16 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-            
+
       - name: Setup Node Using Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: "18"  
-          
+          node-version: "16.4.0"
+
       - name: Setup Node and Install dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm install
-      
+
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -60,15 +60,14 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
-     
+
       - name: Build with Gatsby
         run: npm run build
-        
-        
-      - name:  FTP Deploy
+
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.DEPLOY_SERVER }}
           username: ${{ secrets.DEPLOY_USERNAME }}
-          password: ${{ secrets.DEPLOY_PSW }}        
+          password: ${{ secrets.DEPLOY_PSW }}
           server-dir: /QA/
