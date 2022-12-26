@@ -54,115 +54,120 @@ import { Link, navigate } from "gatsby"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import ReactHtmlParser from "react-html-parser"
 import LoadingSpinner from "../LoadingSpinner"
+import isBrowser from "../../utils/functions"
 
-const BlogDetailPage = ({ updateType, user, chatCount, location }) => {
+const BlogDetailPage = ({
+  updateType,
+  user,
+  chatCount,
+  location,
+  blog,
+  blogs,
+}) => {
   const [current, setCurrent] = useState(0)
-  const store = useContext(StoreContext)
-  const [blog, setBlog] = store?.blog
-  const [blogs, setBlogs] = store?.blogs
+  // const store = useContext(StoreContext)
+
+  // const [blog, setBlog] = store?.blog
+  // const [blogs, setBlogs] = store?.blogs
   const [prevPost, setPrevPost] = useState(null)
   const [nextPost, setNextPost] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const getArticle = () => {
-    //const searchParam = new URLSearchParams(location?.search)
-    const slug = location.pathname.split("/")[2]
-    return slug
-  }
+  const currentBlog = blogs.find(b => b?.node?.slug == blog?.slug)
 
   useEffect(() => {
-    if (blog !== undefined) {
-      let currentBlogIndex = blogs.findIndex(
-        blogData => blogData?.publishDate === blog?.data?.blog?.publishDate
-      )
-
-      if (blogs[currentBlogIndex - 1] !== undefined) {
-        setPrevPost(blogs[currentBlogIndex - 1])
-      } else {
-        setPrevPost(null)
-      }
-
-      if (blogs[currentBlogIndex + 1] !== undefined) {
-        setNextPost(blogs[currentBlogIndex + 1])
-      } else {
-        setNextPost(null)
-      }
+    if (currentBlog) {
+      setPrevPost(currentBlog?.previous)
+      setNextPost(currentBlog?.next)
     }
-  }, [blogs, blog, location])
+  }, [currentBlog])
 
-  useEffect(() => {
-    getParticularBlogAPI(getArticle()).then(res => {
-      if (res?.status === 200) setBlog(res)
-    })
-  }, [location])
+  // const getArticle = () => {
+  //   //const searchParam = new URLSearchParams(location?.search)
+  //   const slug = location.pathname.split("/")[2]
+  //   return slug
+  // }
 
-  useEffect(() => {
-    GetBlogsAPI().then(res => {
-      setBlogs(
-        res?.data?.sort((a, b) => {
-          return moment(b.publishDate) - moment(a.publishDate)
-        })
-      )
-    })
-  }, [])
+  // useEffect(() => {
+  //   // if (blog !== undefined) {
+  //   //   let currentBlogIndex = blogs.findIndex(
+  //   //     blogData => blogData?.publishDate === blog?.data?.blog?.publishDate
+  //   //   )
+
+  //   //   if (blogs[currentBlogIndex - 1] !== undefined) {
+  //   //     setPrevPost(blogs[currentBlogIndex - 1])
+  //   //   } else {
+  //   //     setPrevPost(null)
+  //   //   }
+
+  //   //   if (blogs[currentBlogIndex + 1] !== undefined) {
+  //   //     setNextPost(blogs[currentBlogIndex + 1])
+  //   //   } else {
+  //   //     setNextPost(null)
+  //   //   }
+  //   // }
+
+  //   const blog = blo
+  // }, [blogs])
+
+  // useEffect(() => {
+  //   getParticularBlogAPI(getArticle()).then(res => {
+  //     if (res?.status === 200) setBlog(res)
+  //   })
+  // }, [location])
+
+  // useEffect(() => {
+  //   GetBlogsAPI().then(res => {
+  //     setBlogs(
+  //       res?.data?.sort((a, b) => {
+  //         return moment(b.publishDate) - moment(a.publishDate)
+  //       })
+  //     )
+  //   })
+  // }, [])
 
   return (
     <section>
-      <GatsbySeo
-        title={blog?.data?.blog?.metaTitle}
-        description={blog?.data?.blog?.metaDescription}
-        metaTags={[
-          {
-            name: "keywords",
-            content: blog?.data?.blog?.seoKeywords,
-          },
-        ]}
-      />
-
       <div className="container pt-2 pb-5">
         <div className="row">
           <div
             className="col-md-8 position-relative"
             style={{ minHeight: "600px" }}
           >
-            {blog?.status === 200 ? (
+            {blog ? (
               <div>
                 <img
                   className={`img-fluid ${blog_image_single}`}
-                  src={`${BaseURL}/${blog?.data?.blog?.imagePath}`}
-                  alt={blog?.data?.blog?.bTitle}
+                  src={`${BaseURL}/${blog?.imagePath}`}
+                  alt={blog?.bTitle}
                 />
+
                 <div className={`${blog_content} pt-4 px-4 pb-4`}>
                   <div className="d-flex align-items-center mb-4">
                     <div className="d-flex me-3 align-items-center">
                       <Folderfill />
                       <p className={`${icon_name2} mb-0 ms-2`}>
-                        {blog?.data?.blog?.bCategory}
+                        {blog?.bCategory}
                       </p>
                     </div>
                     <div className="d-flex me-3 align-items-center">
                       <ClockFill />
                       <p className={`${icon_name2} mb-0 ms-2`}>
-                        {moment(blog?.data?.blog?.publishDate).format("LL")}
+                        {moment(blog?.publishDate).format("LL")}
                       </p>
                     </div>
                     <div className="d-flex me-3 align-items-center">
                       <Personfill />
                       <p className={`${icon_name2}   mb-0 ms-2`}>
-                        {blog?.data?.blog?.authorName}
+                        {blog?.authorName}
                       </p>
                     </div>
-                    {/* <div className="d-flex me-3 align-items-center">
-                      <Chatfill />
-                      <p className={`${icon_name2}   mb-0 ms-2`}>5</p>
-                    </div> */}
                   </div>
-                  <h2 className={`${heading_images_text2}`}>
-                    {blog?.data?.blog?.bTitle}
-                  </h2>
-                  <p className={`${description_service_text} mt-4`}>
-                    {ReactHtmlParser(blog?.data?.blog?.bDescription)}
-                  </p>
+                  <h2 className={`${heading_images_text2}`}>{blog?.bTitle}</h2>
+
+                  <div className={`${description_service_text} mt-4`}>
+                    {ReactHtmlParser(blog?.bDescription)}
+                  </div>
 
                   <div className="p-4 d-flex align-items-start">
                     <div className={`${quest_q2}`}>
@@ -203,26 +208,6 @@ const BlogDetailPage = ({ updateType, user, chatCount, location }) => {
                     accusantium doloremque laudantium, totam rem aper erat
                     voluptatem.
                   </p>
-
-                  {/* <div className="d-flex justify-content-between align-items-center mt-5 mb-4 global_change">
-                    <div className="d-flex align-items-center mt-3">
-                      <p className={`${description_btn_cr} mb-0`}>
-                        Developmennt
-                      </p>
-                      <p className={`${description_btn_cr} ms-2 mb-0`}>Web</p>
-                      <p className={`${description_btn_cr} ms-2 mb-0`}>
-                        Website
-                      </p>
-                    </div>
-                    <div className="d-flex align-items-center mt-3">
-                      <p className={`${description_btn_sh} mb-0`}>Share</p>
-                      <img
-                        className={`img-fluid ${icons_social} ms-3`}
-                        src={social}
-                        alt={social}
-                      />
-                    </div>
-                  </div> */}
                 </div>
 
                 {prevPost || nextPost ? (
@@ -341,28 +326,28 @@ const BlogDetailPage = ({ updateType, user, chatCount, location }) => {
                   return (
                     <div
                       className="d-flex align-items-center mb-4"
-                      onClick={() => navigate(`/blog/${blog?.slug}`)}
+                      onClick={() => navigate(`/blog/${blog?.node?.slug}`)}
                       style={{ cursor: "pointer" }}
                     >
                       <div>
                         <img
                           className={`img-fluid ${place_image}`}
-                          src={`${BaseURL}/${blog?.imagePath}`}
-                          alt={blog?.bTitle}
+                          src={`${BaseURL}/${blog?.node?.imagePath}`}
+                          alt={blog?.node?.bTitle}
                         />
                       </div>
                       <div className="ms-3">
                         <p className={`${post_pr_right} mb-0`}>
-                          {blog?.bCategory}
+                          {blog?.node?.bCategory}
                         </p>
 
                         <p
                           className={`${post_pr_des_right} ${text_ellipse} mb-0`}
                         >
-                          {blog?.bTitle}
+                          {blog?.node?.bTitle}
                         </p>
                         <p className={`${post_pr_des_date} mb-0`}>
-                          {moment(blog?.publishDate).format("LL")}
+                          {moment(blog?.node?.publishDate).format("LL")}
                         </p>
                       </div>
                     </div>

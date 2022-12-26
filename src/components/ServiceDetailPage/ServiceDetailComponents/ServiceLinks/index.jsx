@@ -7,8 +7,8 @@ import { StoreContext } from "../../../../utils/context"
 
 const ServiceLinks = props => {
   const { location } = props
-  console.log(props);
-  const {  services } = React.useContext(StoreContext)
+
+  const { services } = React.useContext(StoreContext)
 
   // const [links, setLinks] = useState([])
 
@@ -30,8 +30,6 @@ const ServiceLinks = props => {
   //   }
   // }, [])
 
-
-
   return (
     <div className={`${button_services}`}>
       <div className="d-flex align-items-center mb-4">
@@ -46,7 +44,7 @@ const ServiceLinks = props => {
               key={link?.sUrl}
               link={link?.sUrl}
               title={link?.sName}
-              active={(location.pathname).split("/")[2] === link?.sUrl}
+              active={location.pathname.split("/")[2] === link?.sUrl}
               {...props}
             />
           )

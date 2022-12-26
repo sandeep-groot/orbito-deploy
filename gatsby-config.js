@@ -24,6 +24,19 @@ module.exports = {
     //   },
     // },
     {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: "http://orbitoqa.grootsoftwares.com:5000/api/blog",
+        rootKey: "blogs",
+        schemas: {
+          blogs: `
+          bTitle: String
+          slug: String
+          `,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

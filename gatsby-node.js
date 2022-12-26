@@ -3,30 +3,48 @@ const { default: axios } = require("axios")
 
 // const { GetBlogsAPI } = require("./src/node-api/blogs")
 
-exports.createPages = async ({ page, actions }) => {
+exports.createPages = async ({ page, actions, graphql }) => {
   const { createPage } = actions
 
-  await axios
-    .get("http://orbitoqa.grootsoftwares.com:5000/api/blog")
-    .then(res => {
-      res?.data.map((blog, index, arrCopy) => {
-        let slug = blog?.slug
-        return createPage({
-          path: `/blog/${slug}/`,
-          component: path.resolve("./src/pages/blogDetails.js"),
-          context: { blog },
-        })
-      })
-    })
+  // Creating Blog and Blog Detail page
 
   // Check if the page is a localized 404
 
-  // createPage({
-  //   path: "/",
-  //   component: require.resolve("./src/pages/home.js"),
-  //   context: {},
-  //   defer: true,
+  // const blogs = await axios.get(
+  //   "http://orbitoqa.grootsoftwares.com:5000/api/blog"
+  // )
+
+  // blogs.map(blog => {
+  //   return createPage({
+  //     path: `/blog/${slug}/`,
+  //     component: path.resolve("./src/pages/blogDetails.js"),
+  //     context: { blog },
+  //   })
   // })
+
+  const blogs = await graphql(`
+    {
+      allBlogs {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
+
+  Promise.all(
+    blogs.data.allBlogs.nodes.map(async node => {
+      return await createPage({
+        path: `/blog/${node.slug}/`,
+        component: path.resolve("./src/pages/blogDetails.js"),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: node.slug,
+        },
+      })
+    })
+  )
 
   const services = [
     {

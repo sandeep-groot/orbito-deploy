@@ -18,20 +18,22 @@ import paginate from "../../utils/functions"
 import { StoreContext } from "../../utils/context"
 
 const BlogPage = props => {
-  const store = useContext(StoreContext)
+  const { blogs } = props
+
+  // const store = useContext(StoreContext)
   const [paginatedData, setPaginatedData] = useState([])
   const [activePage, setActivePage] = useState(1)
-  const [blogs, setBlogs] = store?.blogs
+  // const [blogs, setBlogs] = store?.blogs
 
-  useEffect(() => {
-    GetBlogsAPI().then(res => {
-      setBlogs(
-        res?.data?.sort((a, b) => {
-          return moment(b.publishDate) - moment(a.publishDate)
-        })
-      )
-    })
-  }, [])
+  // useEffect(() => {
+  //   GetBlogsAPI().then(res => {
+  //     setBlogs(
+  //       res?.data?.sort((a, b) => {
+  //         return moment(b.publishDate) - moment(a.publishDate)
+  //       })
+  //     )
+  //   })
+  // }, [])
 
   useEffect(() => {
     const paginatedBlogs = paginate(blogs, 9, activePage)
@@ -131,24 +133,24 @@ const BlogPage = props => {
             <div className="row">
               {Array?.isArray(paginatedData) &&
                 paginatedData?.map(blog => {
-                  const date = moment(blog?.publishDate)
+                  const date = moment(blog?.node?.publishDate)
                   const day = date.format("D")
                   const month = date.format("MMM")
 
                   return (
                     blog && (
                       <UpdatesCard
-                        key={blog?.blogId}
+                        key={blog?.node?.blogId}
                         date={day}
                         month={month}
-                        updateType={blog?.bCategory}
-                        user={blog?.authorName}
+                        updateType={blog?.node?.bCategory}
+                        user={blog?.node?.authorName}
                         // chatCount={chatCount}
-                        sources={blog?.imagePath}
-                        alt={blog?.bTitle}
-                        description={blog?.bTitle}
-                        id={blog?.blogId}
-                        slug={blog?.slug}
+                        sources={blog?.node?.imagePath}
+                        alt={blog?.node?.bTitle}
+                        description={blog?.node?.bTitle}
+                        id={blog?.node?.blogId}
+                        slug={blog?.node?.slug}
                         // classDescribe={blog_page_card}
                       />
                     )
