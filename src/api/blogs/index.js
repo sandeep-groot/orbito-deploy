@@ -7,7 +7,7 @@ import { axiosConfig } from "../../utils/functions"
 
 export async function GetBlogsAPI() {
   try {
-    console.log(axiosConfig);
+    console.log(axiosConfig)
     return await axios.get(`${BaseURL}${BlogURLS?.blog}`, axiosConfig)
   } catch (err) {
     console.log("axios :>> ", err)
@@ -33,13 +33,16 @@ export async function CreateBlogAPI(payload) {
     // }
     return await axios.post(`${BaseURL}${BlogURLS?.blog}`, payload, axiosConfig)
   } catch (err) {
-   return err
+    return err
   }
 }
 
 export async function deleteBlogAPI(payload) {
   try {
-    return await axios.delete(`${BaseURL}${BlogURLS?.blog}/${payload?.blogId}`, axiosConfig)
+    return await axios.delete(
+      `${BaseURL}${BlogURLS?.blog}/${payload?.blogId}`,
+      axiosConfig
+    )
   } catch (err) {}
 }
 
@@ -51,6 +54,9 @@ export async function getBlogImageAPI(imagePath) {
 
 export async function getParticularBlogAPI(payload) {
   try {
-    return await axios.get(`${BaseURL}${BlogURLS?.blog}/${payload}`, axiosConfig)
+    return await axios.get(
+      `${BaseURL}${BlogURLS?.blog}/${payload}`,
+      axiosConfig
+    )
   } catch (err) {}
 }

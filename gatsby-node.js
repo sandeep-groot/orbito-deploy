@@ -1,7 +1,23 @@
 const path = require("path")
+const { default: axios } = require("axios")
+
+// const { GetBlogsAPI } = require("./src/node-api/blogs")
 
 exports.createPages = async ({ page, actions }) => {
   const { createPage } = actions
+
+  await axios
+    .get("http://orbitoqa.grootsoftwares.com:5000/api/blog")
+    .then(res => {
+      res?.data.map((blog, index, arrCopy) => {
+        let slug = blog?.slug
+        return createPage({
+          path: `/blog/${slug}/`,
+          component: path.resolve("./src/pages/blogDetails.js"),
+          context: { blog },
+        })
+      })
+    })
 
   // Check if the page is a localized 404
 

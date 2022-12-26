@@ -7,9 +7,9 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
     author: "",
   },
-  // flags: {
-  //   DEV_SSR: true,
-  // },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     "gatsby-plugin-layout",
     "gatsby-plugin-less",
@@ -50,7 +50,7 @@ module.exports = {
     // {
     //   resolve: "gatsby-source-rest-api",
     //   options: {
-    //     endpoints: ["http://localhost:5000/api/services"],
+    //     endpoints: [`http://orbitoqa.grootsoftwares.com:5000/api/blog`],
     //   },
     // },
     // {
@@ -72,9 +72,7 @@ module.exports = {
     //     },
     //     queries: [
     //       {
-    //         statement: "SELECT * FROM services",
-    //         idFieldName: "serviceId",
-    //         name: "services",
+    //         statement: "SELECT * FROM blogs",
     //       },
     //     ],
     //   },
