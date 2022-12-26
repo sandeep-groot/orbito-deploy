@@ -8,7 +8,7 @@ import { graphql } from "gatsby"
 // import Seo from "../components/seo"
 
 const BlogDetail = props => {
-  const { pageContext, location } = props
+  const { pageContext, location, data } = props
 
   // const store = useContext(StoreContext)
   // const [blog, setBlog] = store?.blog
@@ -28,12 +28,12 @@ const BlogDetail = props => {
   return (
     <>
       <GatsbySeo
-        title={pageContext?.blog?.metaTitle}
-        description={pageContext?.blog?.metaDescription}
+        title={data?.blogs?.metaTitle}
+        description={data?.blogs?.metaDescription}
         metaTags={[
           {
             name: "keywords",
-            content: pageContext?.blog?.seoKeywords,
+            content: data?.blogs?.seoKeywords,
           },
         ]}
       />

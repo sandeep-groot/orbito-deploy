@@ -23,7 +23,6 @@ export async function GetParticularBlogAPI({ id }) {
 }
 
 export async function CreateBlogAPI(payload) {
-  console.log("payload :>> ", payload)
   try {
     // const config = {
     //   headers: {
