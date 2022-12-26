@@ -1,0 +1,164 @@
+.blog_image {
+  border-radius: 10px;
+  width: 100%;
+  min-height: 285px;
+  max-height: 285px;
+}
+
+.described_blog {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 5px 90px 0px rgb(2 24 93 / 8%);
+  border-radius: 5px;
+  position: absolute;
+  padding: 6%;
+  width: 86%;
+  left: 7%;
+  top: 84%;
+  min-height: 148px;
+}
+
+.height_blog_img {
+  min-height: 285px;
+}
+
+.icon_name {
+  color: #5e6371;
+  font-size: 12px;
+}
+
+.blogs_all {
+  font-size: 18px;
+  color: #343c55;
+  cursor: pointer;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.date_time {
+  box-shadow: 0px 5px 90px 0px rgb(2 24 93 / 8%);
+  z-index: 1;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  height: 72px;
+  width: 72px;
+  border-radius: 5px;
+  background: #00c0ff;
+  text-align: center;
+  color: #fff;
+  padding: 6px 6px;
+}
+
+._date {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .margin_blog_boxes {
+    margin-bottom: 130px !important;
+  }
+
+  .icon_name {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .blog_image {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+  .margin_blog_boxes {
+    margin-bottom: 130px !important;
+  }
+}
+
+.margin_blog_boxes {
+  margin-bottom: 150px;
+}
+
+.blog_image {
+  border-radius: 10px;
+}
+
+.described_blog {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 5px 90px 0px rgb(2 24 93 / 8%);
+  border-radius: 5px;
+  position: absolute;
+  padding: 6%;
+  width: 86%;
+  left: 7%;
+  top: 84%;
+}
+
+.icon_name {
+  color: #5e6371;
+  font-size: 12px;
+}
+
+.blogs_all {
+  font-size: 18px;
+  color: #343c55;
+}
+
+.date_time {
+  box-shadow: 0px 5px 90px 0px rgb(2 24 93 / 8%);
+  z-index: 1;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  height: 72px;
+  width: 72px;
+  border-radius: 5px;
+  background: #00c0ff;
+  text-align: center;
+  color: #fff;
+  padding: 6px 6px;
+}
+
+._date {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .margin_blog_boxes {
+    margin-bottom: 130px !important;
+  }
+
+  .icon_name {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .blog_image {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+  .margin_blog_boxes {
+    margin-bottom: 130px !important;
+  }
+}
+
+.margin_blog_boxes {
+  margin-bottom: 150px;
+}
+
+.loadingSpinner {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  color: #00c0ff;
+}

@@ -1,0 +1,4 @@
+.footer_input,
+.footer_input::placeholder {
+  font-size: 18px;
+}

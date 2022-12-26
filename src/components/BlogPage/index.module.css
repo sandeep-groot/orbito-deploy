@@ -1,0 +1,80 @@
+.numbering {
+  height: 46px;
+  width: 46px;
+  border: 1px solid #d8dde7;
+  border-radius: 5px;
+  line-height: 52px;
+  font-size: 16px;
+  color: #868b9b;
+  text-align: center;
+  margin: 0 6px;
+}
+
+.numbering_1 {
+  height: 46px;
+  width: 46px;
+  background: #00c0ff;
+  border: 1px solid #00c0ff;
+  border-radius: 5px;
+  line-height: 52px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin: 0 6px;
+}
+
+.numbering:hover {
+  border: 1px solid #00c0ff;
+  background: #00c0ff;
+  color: #fff;
+}
+
+.numbering:focus {
+  border: 1px solid #00c0ff;
+  background: #00c0ff;
+  color: #fff;
+}
+
+.numbering:hover > svg {
+  fill: #fff !important;
+  color:#fff !important;
+}
+.numbering:hover > a{
+  color:#fff
+}
+@media (max-width: 767px) {
+  .pagination {
+    margin-top: 10%;
+  }
+}
+
+.blog_page_card {
+  width: 94% !important;
+  left: 3% !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+@media only screen and (max-width: 1150px) and (min-width: 768px) {
+  .blog_page_card {
+    width: 98% !important;
+    left: 1% !important;
+    border-bottom-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+}
+
+.linkClass{
+color: #00c0ff;
+}
+
+.activeLinkClass{
+color: #fff;
+
+}
+.linkClass:hover{
+  color:#fff !important;
+}

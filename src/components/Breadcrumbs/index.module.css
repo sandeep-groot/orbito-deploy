@@ -1,0 +1,32 @@
+.__breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--breadcrumbs-font-sz);
+}
+
+.breadcrumb_not_active {
+  display: none;
+}
+
+.breadcrumb_active {
+  color: var(--theme-color-three);
+  text-decoration: none;
+}
+
+.breadcrumb_active:hover {
+  color: var(--theme-color);
+}
+
+.breadcrumb_arrow {
+  color: var(--theme-color-three);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .__breadcrumbs {
+    font-size: 10px !important;
+  }
+
+}

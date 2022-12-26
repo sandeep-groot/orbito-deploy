@@ -1,0 +1,63 @@
+.description_service_text2 {
+    color: #868B9B;
+    font-size: 17px !important;
+}
+
+.description_service_text {
+    color: var(--text-description-two);
+    font-size: 15px !important;
+}
+
+.description_service {
+    font-size: 1.8rem !important;
+}
+
+.result_box {
+    border: 1px solid #cacdd3;
+    border-radius: 5px;
+    padding: 14%;
+}
+
+.percent_result {
+    color: #f9758f;
+    font-size: 36px;
+}
+
+.percent_text {
+    color: #343c55;
+    font-size: 16px;
+}
+
+.Portfolio_images {
+    border-radius: 10px;
+}
+
+.heading_images_text {
+    font-size: 2.25rem;
+}
+
+.button_services {
+    background: #eef7f8;
+    border-radius: 8px;
+    padding: 9%;
+}
+
+.project_det_head {
+    color: #343c55;
+    font-size: 1rem;
+}
+
+.project_det_text {
+    color: #5e6371;
+    font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+    .margin_cs_tick {
+        margin-top: 5%;
+    }
+
+    .button_services {
+        margin-top: 3rem !important;
+    }
+}

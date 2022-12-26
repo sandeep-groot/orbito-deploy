@@ -1,0 +1,82 @@
+:root {
+  /* COLOR STARTS HERE
+  ************************/
+
+  --theme-color: #f9758f;
+  --theme-color-two: #00c0ff;
+  --theme-color-three: #fff;
+  --link-color: #343c55;
+  --section-bg-color-one: #fff;
+  --section-bg-color-two: #432d92;
+  --text-heading: #fff;
+
+  --banner-text-description: #fff;
+
+  --text-description: #868b9b;
+  --text-description-two: #5e6371;
+  --text-description-three: #a3adcc;
+  --text-description-four: #cfd1d7;
+
+  --progress-circle-bg-color: #868b9b;
+  --progress-circle-count-bg-color: #d2d2d2;
+
+  /* COLOR ENDS HERE
+  ************************/
+
+  /* FONT SIZE STARTS HERE
+  ************************/
+
+  --title-font-size: 0.9rem;
+  --banner-heading-font-size: 2.8rem;
+  --description-font-size: 1.1rem;
+
+  --heading-font-size: 2.15rem;
+  --heading-font-size-two: 1.35rem;
+
+  --button-large-font-size: 0.9rem;
+  --button-small-font-size: 0.8rem;
+
+  --card-heading-font-size: 1.1rem;
+  --card-description-font-size: 0.9rem;
+  --card-service-readmore-font-size: 0.9rem;
+
+  --count-circle-font-size: 1.35rem;
+  --count-circle-number-font-size: 2.1rem;
+
+  --count-square-count-font-size: 1.85rem;
+  --count-square-des-font-size: 1.2rem;
+
+  --progress-circle-font-size: 1.35rem;
+  --progress-circle-text-font-size: 1.15rem;
+
+  --progress-horizontal-font-size: 1.05rem;
+  --progress-horizontal-percent-font-size: 1.05rem;
+
+  --counter-count-font-size: 2.8rem;
+  --counter-name-font-size: 1.15rem;
+
+  --testimonial-text-font-size: 1.15rem;
+  --testimonial-name-font-size: 1.2rem;
+  --testimonial-profession-font-size: 1.05rem;
+
+  --textbox-font-sz: 0.9em;
+
+  --footer-lnk-heading-font-sz: 1.05rem;
+  --footer-lnk-font-sz: 1rem;
+
+  --accordian-body-font-sz: 0.9rem;
+
+  --badge-font-sz: 0.7rem;
+  --breadcrumbs-font-sz: 1rem;
+
+  --detail_des_heading: 1.8rem;
+  --detail_des_small_heading: 1.3rem;
+  --detail_des_text: 15px;
+
+  /* FONT SIZE ENDS HERE
+  ************************/
+}
+
+.bg_head {
+  background-color: #eef7f8;
+}

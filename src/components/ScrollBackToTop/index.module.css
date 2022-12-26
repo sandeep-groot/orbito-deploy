@@ -1,0 +1,50 @@
+/* scroll styling using mobile first approach */
+
+.back_to_top {
+  position: fixed;
+  top: 90vh;
+  left: 79vw;
+  z-index: 99;
+  border: 0;
+  transition: all 1s ease-in-out;
+}
+
+@media only screen and (min-width: 425px) {
+  .back_to_top {
+    left: 84vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .back_to_top {
+    left: 90vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .back_to_top {
+    left: 93vw;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .back_to_top {
+    left: 85vw;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .back_to_top {
+    left: 75vw;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .back_to_top {
+    left: 70vw;
+  }
+}
+
+.back_to_top:hover {
+  background-color: var(--theme-color-two);
+}

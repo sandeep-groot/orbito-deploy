@@ -1,0 +1,61 @@
+._about {
+  padding-top: 4%;
+}
+
+._about_border_radius {
+  border-radius: 0 10px 10px 0;
+}
+
+._desc {
+  color: var(--text-description-two);
+}
+
+.success_years {
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background-color: #00c0ff;
+  font-size: var(--count-circle-font-size);
+  width: 174px !important;
+  padding: 4%;
+  height: 174px !important;
+  position: absolute;
+  top: 35%;
+  left: 27%;
+}
+
+.count {
+  font-size: var(--count-circle-number-font-size);
+}
+
+@media (max-width: 767px) {
+  .success_years {
+    font-size: 30px;
+    padding: 4% !important;
+    top: 30% !important;
+    left: 27% !important;
+  }
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 768px) {
+  .success_years {
+    top: 48% !important;
+    left: 30% !important;
+    padding: 4%;
+  }
+}
+
+/* Progresss */
+
+.detail_progress {
+  margin-left: 5%;
+  font-size: var(--progress-circle-text-font-size);
+  font-weight: 400;
+  color: var(--progress-circle-bg-color);
+}
+
+@media (max-width: 992px) {
+  ._about_border_radius {
+    border-radius: 0;
+  }
+}

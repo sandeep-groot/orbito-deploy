@@ -1,0 +1,34 @@
+._button {
+  background: #eef7f8;
+  border-radius: 8px;
+  padding: 9%;
+}
+
+._input {
+  color: #868b9b;
+  padding: 0 25px;
+  height: 54px;
+  border: none !important;
+  border-radius: 5px;
+  margin: 0 0 12px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+._txt_area_input {
+  color: #868b9b;
+  padding: 14px 25px;
+  min-height: 100px !important;
+  border: none !important;
+  border-radius: 5px;
+  margin: 0 0 12px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 0px;
+}
+.icon_heading {
+  font-size: 1.3rem !important;
+}

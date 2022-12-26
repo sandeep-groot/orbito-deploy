@@ -1,0 +1,11 @@
+.heading {
+  color: var(--text-heading) !important;
+}
+
+.description {
+  color: var(--text-description-four);
+}
+
+#our_process {
+  background-color: var(--section-bg-color-two);
+}

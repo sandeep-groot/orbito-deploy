@@ -1,0 +1,27 @@
+.__progress {
+  margin: 15px auto;
+  padding: 0;
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.bar {
+  position: relative;
+  float: left;
+  min-width: 1%;
+  height: 100%;
+  background: var(--theme-color-two);
+}
+
+.percentage {
+  color: #fff;
+  font-size: var(--progress-horizontal-percent-font-size);
+}
+
+.percent_label {
+  color: #fff;
+  font-size: var(--progress-horizontal-font-size);
+}

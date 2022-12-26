@@ -1,0 +1,30 @@
+.tab_buttons2 {
+  border-radius: 5px;
+  border: none !important;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #00c0ff;
+  font-family: "Jost", sans-serif;
+  text-align: left;
+  padding: 0 26px;
+  height: 54px;
+  transition: all ease 350ms;
+  -moz-transition: all ease 350ms;
+  -webkit-transition: all ease 350ms;
+}
+.tab_buttons2:hover,
+.tab_buttons2:focus {
+  border: none !important;
+  background: var(--theme-color) !important;
+  color: #fff !important;
+}
+.tab_buttons2._active {
+  border: none !important;
+  background: var(--theme-color) !important;
+  color: #fff !important;
+}

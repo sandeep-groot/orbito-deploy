@@ -1,0 +1,7 @@
+.background_count {
+  background-color: var(--section-bg-color-two);
+  border-radius: 10px;
+  margin-top: -5%;
+  z-index: 2;
+  position: relative;
+}

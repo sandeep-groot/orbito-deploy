@@ -1,0 +1,25 @@
+.background_www {
+  background-color: #00c0ff;
+  border-radius: 10px;
+  padding: 4% 12% 7% 12%;
+}
+.numbering_www {
+  color: #fff;
+  font-size: var(--count-square-count-font-size);
+}
+.projects_www {
+  color: #fff;
+  font-size: var(--count-square-des-font-size);
+}
+.next_project {
+  color: #fff;
+  font-size: var(--heading-font-size-two);
+}
+.know_btn {
+  padding: 5px;
+}
+.color_text_know {
+  color: #fff;
+  margin: 0;
+  padding-right: 10%;
+}

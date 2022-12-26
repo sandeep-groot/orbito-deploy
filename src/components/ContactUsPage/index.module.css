@@ -1,0 +1,37 @@
+.icon_contact {
+  background-color: var(--theme-color-two);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+._description {
+  font-size: var(--detail_des_text) !important;
+  color: var(--text-description);
+}
+
+._input1 {
+  color: #868b9b;
+  padding: 0 25px;
+  height: 50px;
+  border: 1px solid #d8dde7 !important;
+  border-radius: 5px;
+  margin: 0 0 12px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+._txt_area_input {
+  color: #868b9b;
+  padding: 14px 25px;
+  min-height: 170px !important;
+  border: 1px solid #d8dde7 !important;
+  border-radius: 5px;
+  margin: 0 0 12px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 0px;
+}

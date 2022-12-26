@@ -1,0 +1,46 @@
+/* PROGRESS BAR Styling STARTs HERE
+***********************************/
+
+.bar_progress {
+  position: relative;
+  float: left;
+}
+
+.__progress {
+  height: 100px !important;
+  width: 100px;
+  cursor: pointer;
+
+  background-color: transparent !important;
+  box-shadow: none !important;
+  display: block !important;
+}
+
+.progress_circle {
+  transform: rotate(-90deg);
+}
+
+.progress_circle_back {
+  fill: none;
+  stroke: var(--progress-circle-count-bg-color);
+  stroke-width: 7px;
+}
+
+.progress_circle_prog {
+  fill: none;
+  stroke: var(--theme-color-two);
+  stroke-width: 7px;
+  stroke-dashoffset: 0px;
+  transition: stroke-dasharray 0.7s linear 0s;
+}
+
+.progress_text {
+  width: 100%;
+  position: absolute;
+  top: 34px;
+  text-align: center;
+  font-size: var(--progress-circle-font-size);
+}
+
+/* PROGRESS BAR Styling ENDs HERE
+  ***********************************/

@@ -1,0 +1,9 @@
+.top_image_margin:nth-child(even) {
+  margin-top: 3rem !important;
+}
+
+@media (max-width: 767px) {
+  .top_image_margin {
+    margin-top: 3rem !important;
+  }
+}

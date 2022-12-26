@@ -1,0 +1,17 @@
+.read_more {
+  font-size: var(--card-service-readmore-font-size);
+}
+
+.readmore {
+  font-size: 18px;
+  color: var(--link-color);
+  font-weight: 500;
+  display: flex;
+  line-height: 1;
+  text-decoration: none !important;
+  gap: 5px;
+}
+.readmore:hover {
+  color: var(--theme-color);
+  text-decoration: none !important;
+}

@@ -1,0 +1,30 @@
+.heading {
+  color: var(--text-heading) !important;
+}
+
+._description {
+  color: var(--text-description-three);
+}
+
+.badge {
+  right: 3px;
+  border-radius: 50%;
+  background: var(--theme-color);
+  width: 20px;
+  top: 1px;
+  height: 20px;
+  position: absolute;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-heading);
+  font-size: var(--badge-font-sz);
+}
+
+.bg_icon {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}

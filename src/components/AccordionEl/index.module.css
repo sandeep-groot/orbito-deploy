@@ -1,0 +1,73 @@
+/* Accordian stylings
+**********************/
+
+.acc_input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.plusIcon {
+  display: block;
+}
+
+.dashIcon {
+  display: none;
+}
+
+/* .tabs {
+  overflow: hidden;
+  border: 0;
+} */
+
+.tab {
+  position: relative;
+  width: 100%;
+  color: var(--link-color);
+  overflow: hidden;
+  border-radius: 9px;
+  padding: 0 2.3rem;
+  background: var(--section-bg-color-one);
+}
+
+.tab:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.tab_label {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em 0;
+  background: var(--section-bg-color-one);
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: -1.6rem;
+  /* Icon */
+}
+.tab_label:hover {
+  color: var(--theme-color);
+}
+
+.tab_content {
+  max-height: 0;
+  color: var(--link-color);
+  background: var(--section-bg-color-one);
+  transition: all 0.5s;
+  font-size: var(--accordian-body-font-sz);
+}
+
+.tab_body {
+  border-top: 1px solid #d2d0da;
+  padding: 1rem 0;
+}
+
+.acc_input:checked + .tab_label .plusIcon {
+  display: none;
+}
+
+.acc_input:checked + .tab_label .dashIcon {
+  display: block;
+}
+
+.acc_input:checked ~ .tab_content {
+  max-height: 100vh;
+}

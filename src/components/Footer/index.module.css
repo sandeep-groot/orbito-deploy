@@ -1,0 +1,25 @@
+.heading {
+  font-size: var(--footer-lnk-heading-font-sz);
+}
+
+.text {
+  font-size: var(--footer-lnk-font-sz) !important;
+}
+
+.footer_divider {
+  padding: 38px 0px 28px 0px;
+}
+
+@media (max-width: 767px) {
+  .text_footer_center {
+    text-align: center !important;
+  }
+  .justify_content_footer {
+    justify-content: center !important;
+    display: block !important;
+  }
+}
+.justify_content_footer {
+  justify-content: flex-end;
+  display: flex;
+}

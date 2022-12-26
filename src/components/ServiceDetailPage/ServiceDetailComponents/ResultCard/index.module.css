@@ -1,0 +1,15 @@
+.result_box {
+  border: 1px solid #cacdd3;
+  border-radius: 5px;
+  padding: 14%;
+}
+
+.percent_result {
+  color: #f9758f;
+  font-size: 36px;
+}
+
+.percent_text {
+  color: #343c55;
+  font-size: 16px;
+}

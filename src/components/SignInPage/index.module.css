@@ -1,0 +1,13 @@
+.signin_form {
+    background-color: var(--link-color);
+    border-radius: 10px;
+}
+
+.login_text {
+    color: var(--theme-color-three)
+}
+
+.signin_form_align {
+    align-items: center;
+    min-height: 100vh;
+}

@@ -1,0 +1,9 @@
+.link_button:active,
+.link_button:focus {
+  background: var(--theme-color) !important;
+  color: var(--theme-color-three) !important;
+}
+
+.link_button:hover {
+  opacity: 0.7;
+}

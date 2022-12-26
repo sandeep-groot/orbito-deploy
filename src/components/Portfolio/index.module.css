@@ -1,0 +1,9 @@
+.Portfolio_images {
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .Portfolio_images {
+    margin-top: 3%;
+  }
+}

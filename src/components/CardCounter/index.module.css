@@ -1,0 +1,17 @@
+.client_count {
+  color: var(--theme-color-two);
+  font-size: var(--counter-count-font-size);
+  line-height: 44px;
+}
+.client_numbers {
+  color: var(--text-heading);
+  font-size: var(--counter-name-font-size);
+  line-height: 26px;
+  margin-left: 15%;
+}
+
+@media screen and (max-width: 767px) {
+  .client_count {
+    min-width: 100px;
+  }
+}

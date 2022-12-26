@@ -1,0 +1,29 @@
+.FAQ {
+  background-color: red;
+}
+
+.tab_buttons {
+  border: 1px solid #d8dde7;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #343c55;
+  background: transparent;
+  font-family: "Jost", sans-serif;
+  text-align: left;
+  padding: 0 26px;
+  height: 54px;
+  transition: all ease 350ms;
+  -moz-transition: all ease 350ms;
+  -webkit-transition: all ease 350ms;
+}
+.tab_buttons:hover {
+  border: none !important;
+  background: #00c0ff !important;
+  color: #fff !important;
+}
+

@@ -1,0 +1,9 @@
+.card_containerStyle {
+  margin-bottom: -8% !important;
+}
+
+@media screen and (max-width: 992px) {
+  .card_containerStyle {
+    margin-bottom: 3% !important;
+  }
+}

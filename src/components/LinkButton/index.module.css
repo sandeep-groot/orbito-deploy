@@ -1,0 +1,5 @@
+._btn:hover {
+  background-color: var(--theme-color-two) !important;
+  background: var(--theme-color-two) !important;
+  border-color: var(--theme-color-two) !important;
+}
