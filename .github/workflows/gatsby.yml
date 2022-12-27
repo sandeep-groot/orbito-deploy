@@ -17,7 +17,7 @@ on:
   # Allows external webhook trigger
   repository_dispatch:
     types:
-      - orbito
+      - orbitowebhook
 
 jobs:
   # Build job
@@ -76,27 +76,4 @@ jobs:
           password: ${{ secrets.DEPLOY_PSW }}
           local-dir: ./public/
           server-dir: /QA/
-<<<<<<< HEAD
 
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/config/**
-            **/.cache/**
-            **/src/**
-            **/static/**
-            .gitignore
-            .prettierignore
-            .prettierrc
-
-            README.md
-            gatsby-browser.js
-            gatsby-config.js
-            gatsby-node.js
-            gatsby-ssr.js
-            package-lock.json
-            package.json
-=======
-        
->>>>>>> f26d5075842755cede5a14ed3f635c84a9b83441
