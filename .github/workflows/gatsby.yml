@@ -17,7 +17,7 @@ on:
   # Allows external webhook trigger
   repository_dispatch:
     types:
-      - orbitowebhook
+      - orbito
 
 jobs:
   # Build job
