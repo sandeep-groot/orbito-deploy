@@ -63,32 +63,40 @@ jobs:
 
       - name: Build with Gatsby
         run: npm run build
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: gaysby-build
+          path: public
 
-      - name: FTP Deploy
+  # Deploy job
+  deploy:
+    needs: build
+    runs-on: windows-latest
+    
+    steps:                  
+      #- name: Download a single artifact
+       # uses: actions/download-artifact@v3
+       
+      - uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: gaysby-build
+          path: public
+          
+      - name: Open Public Folder
+        run: dir
+        
+    
+        
+      - name:  FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.DEPLOY_SERVER }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           password: ${{ secrets.DEPLOY_PSW }}
+          local-dir: ./public/
           server-dir: /QA/
         
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/config/**
-            **/.cache/**
-            **/src/**
-            **/static/**
-            **/.gitignore/**
-            **/.prettierignore/**
-            **/.prettierrc/**
-            **/LICENSE/**
-            **/README.md/**
-            **/gatsby-browser.js/**
-            **/gatsby-config.js/**
-            **/gatsby-node.js/**
-            **/gatsby-ssr.js/**
-            **/package-lock.json/**
-            **/package.json/**
-          
