@@ -222,17 +222,20 @@ const AdminBlog = () => {
         <button
           type="button"
           onClick={() => {
+            const config = {
+              headers: {
+                Accept: "application/vnd.github+json",
+                Authorization:
+                  "Bearer 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",
+                "Content-Type": "application/json",
+              },
+            }
             axios.post(
-              "https://api.github.com/repos/sandeep-groot/gatsbytesting/dispatches",
+              "https://api.github.com/repos/sandeep-groot/orbito-deploy/dispatches",
               {
                 event_type: "orbitowebhook",
               },
-              {
-                Accept: "application/vnd.github.everest-preview+json",
-                Authorization:
-                  "Bearer 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",
-                "Content-Type": "application/json",
-              }
+              config
             )
           }}
         >
