@@ -42,13 +42,13 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Setup Node Using Node.js ${{ matrix.node-version }}
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "16.4.0"
 
       - name: Setup Node and Install dependencies
-        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        #if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Restore cache
